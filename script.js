@@ -48,11 +48,17 @@ function playRound(humanChoice, computerChoice){
 }
 
 function playGame(){
+    if (rounds > 0){
 
     let humanChoice = generateHumanChoice();
     let computerChoice = generateComputerChoice();
 
     playRound(humanChoice, computerChoice);
+    rounds--;
+    }
+    else{
+
+    }
 }
 
 
@@ -60,7 +66,4 @@ let rounds = 5;
 let humanScore = 0;
 let computerScore = 0;
 
-if (rounds > 5){
-    playGame();
-    rounds--;
-}
+playGame();
