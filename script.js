@@ -1,5 +1,12 @@
+function generateHumanChoice(){
+    let HC = prompt("Enter your choice \"rock\"-\"paper\"-\"scissors\"");
+    return HC.toLowerCase(); 
+}
+
+
 function playGame(){
-    
+    let humanChoice = generateHumanChoice();
+    let computerChoice = generateComputerChoice();
 }
 
 
