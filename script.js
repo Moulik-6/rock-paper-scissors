@@ -47,6 +47,20 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
+function compareScores(humanScore, computerScore){
+    if (humanScore === computerScore){
+        console.log("well, well, well too bad its a tie ");
+    }
+    else if(humanScore > computerScore){
+        console.log("Human");
+        console.log("i knew it. human's are superior");
+    }
+    else{
+        console.log("conputer");
+        console.log("Congrats, you are stupid than a mindless machine");
+    }
+}
+
 function playGame(){
     if (rounds > 0){
 
@@ -57,7 +71,8 @@ function playGame(){
     rounds--;
     }
     else{
-
+        console.log("the game has been finished and the winner is: ")
+        compareScores(humanScore, computerScore);
     }
 }
 
