@@ -62,18 +62,12 @@ function compareScores(humanScore, computerScore){
 }
 
 function playGame(){
-    if (rounds > 0){
 
     let humanChoice = generateHumanChoice();
     let computerChoice = generateComputerChoice();
 
     playRound(humanChoice, computerChoice);
-    rounds--;
-    }
-    else{
-        console.log("the game has been finished and the winner is: ")
-        compareScores(humanScore, computerScore);
-    }
+
 }
 
 
@@ -81,4 +75,13 @@ let rounds = 5;
 let humanScore = 0;
 let computerScore = 0;
 
-playGame();
+while(rounds != 0){
+    playGame();
+}
+
+if (rounds == 0){
+    
+    console.log("the game has been finished and the winner is: ")
+    compareScores(humanScore, computerScore);
+
+}
