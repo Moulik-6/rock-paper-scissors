@@ -77,10 +77,11 @@ let computerScore = 0;
 
 while(rounds != 0){
     playGame();
+    rounds--;
 }
 
 if (rounds == 0){
-    
+
     console.log("the game has been finished and the winner is: ")
     compareScores(humanScore, computerScore);
 
