@@ -3,10 +3,28 @@ function generateHumanChoice(){
     return HC.toLowerCase(); 
 }
 
+function generateComputerChoice(){
+
+    let ran = Math.floor(Math.random() * 10);
+
+    if (1 <= ran <= 3){
+        return "rock";
+    } 
+    else if(4 <= ran <= 6){
+        return "paper";
+    }
+    else{
+        return "scissors";
+    }
+
+}
 
 function playGame(){
+
     let humanChoice = generateHumanChoice();
     let computerChoice = generateComputerChoice();
+
+    
 }
 
 
