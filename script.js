@@ -22,12 +22,37 @@ function generateComputerChoice(){
 
 }
 
+function playRound(humanChoice, computerChoice){
+
+    if(humanChoice === computerChoice){
+        console.log("Both human and computer played same move `${humanChoice}` and its a tie");
+    }
+    else{
+        if(humanChoice === "rock" && computerChoice === "paper"){
+            console.log("`${computerChoice}` Beats `${humanChoice}`. so, computer gains a point");
+            computerScore++;
+        }
+        else if(humanChoice === "paper" && computerChoice === "scissors"){
+            console.log("`${computerChoice}` Beats `${humanChoice}`. so, computer gains a point");
+            computerScore++;           
+        }
+        else if(humanChoice === "scissors" && computerChoice === "rock"){
+            console.log("`${computerChoice}` Beats `${humanChoice}`. so, computer gains a point");
+            computerScore++;            
+        }
+        else{
+            console.log("`${humanChoice}` Beats `${computerChoice}`. so, human gains a point");
+            humanScore++;
+        }
+    }
+}
+
 function playGame(){
 
     let humanChoice = generateHumanChoice();
     let computerChoice = generateComputerChoice();
 
-    
+    playRound(humanChoice, computerChoice);
 }
 
 
