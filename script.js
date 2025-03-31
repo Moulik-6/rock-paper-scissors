@@ -56,7 +56,7 @@ function compareScores(humanScore, computerScore){
         console.log("i knew it. human's are superior");
     }
     else{
-        console.log("conputer");
+        console.log("computer");
         console.log("Congrats, you are stupid than a mindless machine");
     }
 }
