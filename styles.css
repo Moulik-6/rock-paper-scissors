@@ -19,6 +19,7 @@ header a{
     border: 2px solid blanchedalmond;
     border-radius: 12px;
     padding: 3px;
+    padding-right: 18px;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
@@ -41,4 +42,16 @@ header a{
 
 button{
     padding: 0px;
+    border-radius: 8px;
+}
+
+.btn {
+    margin: 12px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn button{
+    width: 50px;
+    padding: 2px;
 }
