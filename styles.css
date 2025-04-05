@@ -8,6 +8,7 @@ header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 42px;
+    flex-wrap: wrap;
 }
 
 header h2 {
@@ -23,4 +24,21 @@ header a{
     text-decoration: none;
     color: black;
     align-self: center;
+}
+
+.play{
+    margin: 152px 50px 50px;
+    padding: 22px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+}
+
+.play img{
+    height: 180px;
+}
+
+button{
+    padding: 0px;
 }
