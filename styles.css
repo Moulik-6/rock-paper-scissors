@@ -75,6 +75,6 @@ header a{
     justify-content: space-evenly;
 }
 
-.op{
+.round, .player, .comp, .win{
     text-align: center;
 }
