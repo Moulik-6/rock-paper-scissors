@@ -73,6 +73,8 @@ header a{
     padding: 14px;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .round, .player, .comp, .win{
