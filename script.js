@@ -6,10 +6,7 @@ function generateHumanChoice(){
 function generateComputerChoice(){
 
     let ran = Math.floor(Math.random() * 10);
-// javascript evalutes operators from left to right so instead of following expression
-// it will evalute it as (1 <= ran) it could return true-1 or false-0 
-// next it checks 1<=3 or 0<=3 which always returns true and excutes only if block
-// so we could write it as (1<=ran ) && (ran<=3)
+
     if ((1 <= ran) && (ran <= 3)){
         return "rock";
     } 
@@ -75,14 +72,10 @@ let rounds = 5;
 let humanScore = 0;
 let computerScore = 0;
 
-while(rounds != 0){
-    playGame();
-    rounds--;
-}
 
-if (rounds == 0){
+playGame();
 
-    console.log("the game has been finished and the winner is: ")
-    compareScores(humanScore, computerScore);
 
-}
+
+console.log("the game has been finished and the winner is: ")
+compareScores(humanScore, computerScore);
