@@ -1,6 +1,6 @@
 function generateHumanChoice(){
-    let HC = prompt("Enter your choice \"rock\"-\"paper\"-\"scissors\"");
-    return HC.toLowerCase(); 
+    //let HC = prompt("Enter your choice \"rock\"-\"paper\"-\"scissors\"");
+    //return HC.toLowerCase(); 
 }
 
 function generateComputerChoice(){
