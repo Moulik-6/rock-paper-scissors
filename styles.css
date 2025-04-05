@@ -79,4 +79,8 @@ header a{
 
 .round, .player, .comp, .win{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
 }

@@ -39,26 +39,33 @@ function generateComputerChoice(){
 }
 
 function playRound(humanChoice, computerChoice){
-    const winner = document.querySelector()
+    const winner = document.querySelector(".win");
+    const display_winner = document.createElement("p");
+    display_winner.style.cssText = "height: 41.03px; width: 41.03px; padding: 2px; margin: 0px; display: flex; align-items: center; justify-content; space-around;";
 
     if(humanChoice === computerChoice){
-        console.log(`Both human and computer played same move ${humanChoice} and its a tie`);
+        display_winner.textContent = "TIE";
+        winner.appendChild(display_winner);
     }
     else{
         if(humanChoice === "rock" && computerChoice === "paper"){
-            console.log(`${computerChoice} Beats ${humanChoice}. so, computer gains a point`);
+            display_winner.textContent = "Computer";
+            winner.appendChild(display_winner);
             computerScore++;
         }
         else if(humanChoice === "paper" && computerChoice === "scissors"){
-            console.log(`${computerChoice} Beats ${humanChoice}. so, computer gains a point`);
+            display_winner.textContent = "Computer";
+            winner.appendChild(display_winner);
             computerScore++;           
         }
         else if(humanChoice === "scissors" && computerChoice === "rock"){
-            console.log(`${computerChoice} Beats ${humanChoice}. so, computer gains a point`);
+            display_winner.textContent = "Computer";
+            winner.appendChild(display_winner);
             computerScore++;            
         }
         else{
-            console.log(`${humanChoice} Beats ${computerChoice}. so, human gains a point`);
+            display_winner.textContent = "Player";
+            winner.appendChild(display_winner);
             humanScore++;
         }
     }
@@ -82,8 +89,12 @@ function playGame(){
     const playerChoice = document.querySelector(".player");
     const img = document.createElement("img");
     img.style = "height: 45px; width:45px";
+    const para = document.createElement("p");
+    para.style.cssText = "height: 41.03px; width: 41.03px; padding: 2px; margin: 0px; display: flex; align-items: center; justify-content; space-around;";
 
-    round_no.textContent = round++;
+    para.textContent = round++;
+    round_no.appendChild(para);
+
     let humanChoice = "";
 
     if(this.id === "r"){
