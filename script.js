@@ -14,6 +14,7 @@
 
 function generateComputerChoice(){
     const compChoice = document.querySelector(".comp");
+    compChoice.innerText = "";
     const img = document.createElement("img");
     img.style = "height: 45px; width:45px";
 
@@ -38,8 +39,42 @@ function generateComputerChoice(){
 
 }
 
+function resetGame(){
+    const round_no = document.querySelector(".round");
+    const playerChoice = document.querySelector(".player");
+    const winner = document.querySelector(".win");
+    const compChoice = document.querySelector(".comp");
+    const p = document.querySelector("#op");
+
+    humanScore = 0;
+    computerScore = 0;
+    round = 1;
+
+    round_no.textContent = "";
+    playerChoice.textContent = "";
+    winner.textContent = "";
+    compChoice.textContent = "";
+    p.textContent = "";
+}
+
+function displayWinner(humanScore, computerScore){
+    const p = document.querySelector("#op");
+    
+    if (humanScore === 5){
+        p.textContent = "Player Won The Game!";
+    }
+    else{
+        p.textContent = "Computer Won The Game!";
+    }
+
+    setTimeout(function(){
+            resetGame();
+        },2000);
+}
+
 function playRound(humanChoice, computerChoice){
     const winner = document.querySelector(".win");
+    winner.innerText = "";
     const display_winner = document.createElement("p");
     display_winner.style.cssText = "height: 41.03px; width: 41.03px; padding: 2px; margin: 0px; display: flex; align-items: center; justify-content; space-around;";
 
@@ -70,26 +105,22 @@ function playRound(humanChoice, computerChoice){
         }
     }
     
-    compareScores(humanScore, computerScore);
+    if(humanScore === 5 || computerScore === 5){
+        displayWinner(humanScore, computerScore);
+    }
 }
 
-function compareScores(humanScore, computerScore){
-
-        if (humanScore === 5){
-            console.log("human wins");
-        }
-        else if(computerScore === 5){
-            console.log("computer wins");
-        }
-
-}
 
 function playGame(){
     const round_no = document.querySelector(".round");
     const playerChoice = document.querySelector(".player");
     const img = document.createElement("img");
-    img.style = "height: 45px; width:45px";
     const para = document.createElement("p");
+    
+    round_no.textContent = "";
+    playerChoice.innerText = "";    
+
+    img.style = "height: 45px; width:45px";
     para.style.cssText = "height: 41.03px; width: 41.03px; padding: 2px; margin: 0px; display: flex; align-items: center; justify-content; space-around;";
 
     para.textContent = round++;
@@ -115,7 +146,7 @@ function playGame(){
 
 
     let computerChoice = generateComputerChoice();
-    playRound(humanChoice, computerChoice,);
+    playRound(humanChoice, computerChoice);
 
 }
 
@@ -133,3 +164,8 @@ for(let i = 0; i < rock.length; i++){
     paper[i].addEventListener("click", playGame);
     scissors[i].addEventListener("click", playGame);
 }
+
+
+const reset = document.querySelector("#reset");
+
+reset.addEventListener("click", resetGame);
